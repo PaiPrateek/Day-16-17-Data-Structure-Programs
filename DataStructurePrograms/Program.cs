@@ -6,36 +6,40 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
-            Program p = new Program();
-            Console.WriteLine("Ordered List");
+            // calling driver method
+            DriverMethod();
 
-            //Created  linked list
-            p.addFirst(96);
-            p.addFirst(63);
-            p.addFirst(74);
-            p.addFirst(101);
-            p.addFirst(92);
-            p.addFirst(12);
-            p.addFirst(14);
 
-            Console.WriteLine("Enter Student Name:");
-            int input = int.Parse(Console.ReadLine());
+            //Program p = new Program();
+            //Console.WriteLine("Ordered List");
 
-            bool check = p.search(input);
+            ////Created  linked list
+            //p.addFirst(96);
+            //p.addFirst(63);
+            //p.addFirst(74);
+            //p.addFirst(101);
+            //p.addFirst(92);
+            //p.addFirst(12);
+            //p.addFirst(14);
 
-            if (check == true)
-            {
-                // if input sata is present in the list then then that data is removed from the list
-                p.remove(input);
-            }
-            else
-            {
-                //if input data is not present in the list then that data is added into the list
-                p.addFirst(input);
-            }
+            //Console.WriteLine("Enter Student Name:");
+            //int input = int.Parse(Console.ReadLine());
 
-            //Display the data present in the list after the completing the above said operations.
-            p.diplayData();
+            //bool check = p.search(input);
+
+            //if (check == true)
+            //{
+            //    // if input sata is present in the list then then that data is removed from the list
+            //    p.remove(input);
+            //}
+            //else
+            //{
+            //    //if input data is not present in the list then that data is added into the list
+            //    p.addFirst(input);
+            //}
+
+            ////Display the data present in the list after the completing the above said operations.
+            //p.diplayData();
 
         }
         // Node Class Creation
@@ -271,6 +275,103 @@ namespace DataStructurePrograms
                 t = t.next;
             }
             return false;
+        }
+        //Creating method 
+        public static void DriverMethod()
+        {
+            Console.Write("Enter an Arithmetic Equation: ");
+            string ar = Console.ReadLine();
+            Console.WriteLine(Balanced(ar));
+        }
+        //Creating method to check whether the input equation is balanced or not
+        public static bool Balanced(string ar)
+        {
+            Stack<Char> stack = new Stack<Char>(ar.Length);
+            for (int i = 0; i < ar.Length; i++)
+            {
+                char ch = ar[i];
+                if (ch == '(')
+                {
+                    stack.Push(ch);
+                }
+                else if (ch == ')')
+                {
+                    if (stack.IsEmpty())
+                        return false;
+                    if (ch == ')' && stack.Pop() != '(')
+                    {
+                        return false;
+                    }
+                }
+            }
+            return stack.IsEmpty();
+
+        }
+
+        //Creating the Stack Class
+        public class Stack<Char>
+        {
+            int capacity;
+            Char[] obj;
+            int top = -1;
+            public Stack(int capacity)
+            {
+                this.capacity = capacity;
+                obj = new Char[capacity];
+            }
+            //Creating the push method to add the data into the stack
+            public bool Push(Char data)
+            {
+                if (top == capacity - 1)
+                {
+                    Console.WriteLine("Stack overFlow");
+                    return false;
+                }
+                obj[++top] = data;
+                return true;
+            }
+            public Char Pop()
+            {
+                if (top == -1)
+                {
+                    Console.WriteLine("Stack Underflow");
+                    return default(Char);
+                }
+                return obj[top--];
+            }
+            // Creating the Peek method to show the latest added element
+            public Char Peek()
+            {
+                if (top == -1)
+                {
+                    Console.WriteLine("Stack is UnderFlow");
+                    return (Char)default;
+                }
+                return obj[top];
+            }
+            //Creating the method to check the stack is empty or not
+            public bool IsEmpty()
+            {
+
+                if (top == -1)
+                    return true;
+                else return false;
+            }
+            //Creating the method for checking the size of the stack
+            public int Size()
+            {
+                return top + 1;
+            }
+            public override string ToString()
+            {
+                String s = "";
+                for (int i = 0; i < capacity; i++)
+                {
+                    s = s + obj[i] + " ";
+                }
+                return s;
+            }
+
         }
     }
 }
