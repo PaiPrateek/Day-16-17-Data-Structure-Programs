@@ -7,23 +7,23 @@ namespace DataStructurePrograms
         static void Main(string[] args)
         {
             Program p = new Program();
-            Console.WriteLine("Unordered List");
+            Console.WriteLine("Ordered List");
 
-            //Created student linked list as predefined list instaed of text from the file
-            p.addFirst("Prateek");
-            p.addFirst("Suhas");
-            p.addFirst("Prajwal");
-            p.addFirst("Sanath");
-            p.addFirst("Manjesh");
-            p.addFirst("Rakesh");
-            p.addFirst("Rohan");
+            //Created  linked list
+            p.addFirst(96);
+            p.addFirst(63);
+            p.addFirst(74);
+            p.addFirst(101);
+            p.addFirst(92);
+            p.addFirst(12);
+            p.addFirst(14);
 
             Console.WriteLine("Enter Student Name:");
-            string input = Console.ReadLine();
+            int input = int.Parse(Console.ReadLine());
 
             bool check = p.search(input);
 
-            if (check==true)
+            if (check == true)
             {
                 // if input sata is present in the list then then that data is removed from the list
                 p.remove(input);
@@ -41,9 +41,9 @@ namespace DataStructurePrograms
         // Node Class Creation
         public class Node
         {
-            public string data;
+            public int data;
             public Node next;
-            public Node(string data)
+            public Node(int data)
             {
                 this.data = data;
             }
@@ -52,7 +52,7 @@ namespace DataStructurePrograms
         private Node head;
 
         //Createing  Method to add element at last position 
-        public bool append(string data)
+        public bool append(int data)
         {
             Node n = new Node(data);
             if (head == null)
@@ -70,7 +70,7 @@ namespace DataStructurePrograms
             return true;
         }
         //Creating method for add ing element at first postion - add()
-        public bool addFirst(string data)
+        public bool addFirst(int data)
         {
             Node n = new Node(data);
             if (head == null)
@@ -97,7 +97,7 @@ namespace DataStructurePrograms
             }
         }
         // Create method for Removing the latest entered item - pop()
-        public string pop()
+        public int pop()
         {
             if (head == null)
             {
@@ -109,13 +109,13 @@ namespace DataStructurePrograms
                 p = t;
                 t = t.next;
             }
-            string obj = t.data;
+            int obj = t.data;
             p.next = null;
             return obj;
         }
 
         // CReating method for getting latest added item - peek()
-        public string peek()
+        public int peek()
         {
             if (head == null)
             {
@@ -129,12 +129,12 @@ namespace DataStructurePrograms
                 t = t.next;
             }
 
-            string obj = t.data;
+            int obj = t.data;
             return obj;
         }
 
         // Creating method for searching - search()
-        public bool search(string data)
+        public bool search(int data)
         {
             if (head == null)
             {
@@ -156,7 +156,7 @@ namespace DataStructurePrograms
             {
                 return true;
             }
-                
+
             return false;
         }
         //Craeting method for checking the size of the list - size()
@@ -190,7 +190,7 @@ namespace DataStructurePrograms
             return s;
         }
         //Creating method for getting the index of specified data
-        public int index(string data)
+        public int index(int data)
         {
             int count = -1;
             if (head == null)
@@ -206,7 +206,7 @@ namespace DataStructurePrograms
             return -1;
         }
         //Creating method for inserting the data inthe specified index position
-        public bool insert(int ind, string data)
+        public bool insert(int ind, int data)
         {
             Node n = new Node(data);
             if (ind == 0)
@@ -251,7 +251,7 @@ namespace DataStructurePrograms
         //}
 
         // Creating method to Delete the elment from the Linked List 
-        public bool remove(string data)
+        public bool remove(int data)
         {
             if (head == null)
             {
