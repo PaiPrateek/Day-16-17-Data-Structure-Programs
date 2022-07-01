@@ -6,8 +6,11 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
+
+            CashCounter cashcounter = new CashCounter();
+
             // calling driver method
-            DriverMethod();
+            //DriverMethod();
 
 
             //Program p = new Program();
