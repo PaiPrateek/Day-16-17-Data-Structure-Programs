@@ -6,8 +6,11 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
+            //Palindrome
+            Palindrome.checkPalindrome();
+
             // calling driver method
-            DriverMethod();
+            //DriverMethod();
 
 
             //Program p = new Program();
@@ -373,5 +376,7 @@ namespace DataStructurePrograms
             }
 
         }
+
+
     }
 }
