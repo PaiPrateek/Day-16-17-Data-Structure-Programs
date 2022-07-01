@@ -6,7 +6,7 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
-
+            //Calling cash counter constructor by creating the object
             CashCounter cashcounter = new CashCounter();
 
             // calling driver method
