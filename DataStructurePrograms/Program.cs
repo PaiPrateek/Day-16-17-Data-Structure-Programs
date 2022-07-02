@@ -6,9 +6,12 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
-            int[] intarray = { 25, 63, 86, 95, 74, 32, 63, 45 };
-            var data = SearchNumber.FillHashtable(intarray);
-            SearchNumber.search(data, 45);
+
+            PrimeNumber2Dimension.PrimeNumber();
+
+            //int[] intarray = { 25, 63, 86, 95, 74, 32, 63, 45 };
+            //var data = SearchNumber.FillHashtable(intarray);
+            //SearchNumber.search(data, 45);
 
             //Calling cash counter constructor by creating the object
             //CashCounter cashcounter = new CashCounter();
