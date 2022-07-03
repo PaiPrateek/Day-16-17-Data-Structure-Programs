@@ -6,8 +6,10 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
+            Calender.DriverMethod();
 
-            PrimeNumber2Dimension.PrimeNumber();
+            //Prime Numbere in 2D
+            //PrimeNumber2Dimension.PrimeNumber();
 
             //int[] intarray = { 25, 63, 86, 95, 74, 32, 63, 45 };
             //var data = SearchNumber.FillHashtable(intarray);
