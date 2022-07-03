@@ -6,7 +6,10 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
-            Calender.DriverMethod();
+
+            WeekDay.DriverMethod();
+            //Calender
+            //Calender.DriverMethod();
 
             //Prime Numbere in 2D
             //PrimeNumber2Dimension.PrimeNumber();
