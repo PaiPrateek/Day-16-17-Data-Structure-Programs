@@ -6,8 +6,10 @@ namespace DataStructurePrograms
     {
         static void Main(string[] args)
         {
+            QueueInStacks.DriverMethod();
+            // Week Day in Queue
+            //WeekDay.DriverMethod();
 
-            WeekDay.DriverMethod();
             //Calender
             //Calender.DriverMethod();
 
